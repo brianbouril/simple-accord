@@ -1,0 +1,26 @@
+.accord {
+	margin: 20px 20px 30px;
+	width: 200px;
+}
+
+.accord div {
+	display: block;
+	width: 200px;
+}
+
+.accord .header {
+	padding: 10px;
+	background: #333;
+	color: #FFF;
+	cursor: pointer;
+}
+
+.accord .header:hover {
+	background: #00ccFF;
+}
+
+.accord .content {
+	padding: 10px;
+	background: #CCC;
+	display: none; /* REQUIRED: hides all content areas on page load */
+}
