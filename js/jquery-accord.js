@@ -1,14 +1,25 @@
+/*
+* Accord jQuery UI Widget v1.0
+*
+* Copyright (c) 2011 Brian Bouril
+*
+* Dual licensed under the MIT and GPL licenses, located in
+* MIT-LICENSE.txt and GPL-LICENSE.txt respectively.
+*
+* Thur Mar 08 2012 11:27:29 GMT-0500 (CDT)
+*/
+
 (function( $ ) {
-  $.widget( "plugins.accord", {
+  $.widget( "bb.accord", {
  
     // These options will be used as defaults
     options: { 
-    	headers : '.header', // define accordian headers aka trigger to open
+    	header : '.header', // define accordian header aka trigger to open
 		content : '.content', // define accordion containers
 		slideup : 'fast', // also takes an integer not in quotes
 		slidedown : 'fast', // also takes an integer not in quotes
-		collapsible: false, // (boolean) Whether only one section can be active (true)
-		activeClass: 'open', // (string) Class added to active headers, can also be used to apply open/close icon
+		collapsible: false, // (boolean) Whether only one header and content can be active (true)
+		activeClass: 'open', // (string) Class added to active header, can also be used to apply open/close icon
 		active: 0 // pass the index of the slide you want to start active, if left at 0 none will start active
     },
  
@@ -16,20 +27,21 @@
     _create: function() {
 		var _this = this,
 			el = _this.element,
-			headers = el.find(_this.options.headers),
+			header = el.find(_this.options.header),
 			content = el.find(_this.options.content);
 
 		if(_this.options.active != 0){
-			// add the active class to teh header and open the slide
-			el.find(_this.options.headers +':nth-child('+_this.options.active+')').addClass(_this.options.activeClass).next().show();
+			// add the active class to the header and open the slide
+			el.find(_this.options.header +':nth-child('+_this.options.active+')').addClass(_this.options.activeClass).next().show();
 		}
 
-		headers.bind('click', function() {				
+		header.bind('click', function() {				
 			// if collapsible is true close all
-			if(_this.options.collapsible == true){
-				
+			if(_this.options.collapsible === true){
+				//console.log($('.'+_this.options.header+'.'+_this.options.activeClass));
+				var $active = _this.element.find('.'+_this.options.header+'.'+_this.options.activeClass)
 				// remove the active class from all headers 
-				$(".header."+_this.options.activeClass).removeClass(_this.options.activeClass);
+				$active.removeClass(_this.options.activeClass);
 				// close all open slides
 		 		content.slideUp(_this.options.slideup);
 	   		}
@@ -46,8 +58,6 @@
 			 }
 			  
 		 });
-
-
     },
  
 	// open a section		
@@ -68,7 +78,7 @@
 	_destroy: function(){
 		var _this = this;
 
-		_this.element.find('.header').unbind('click');
+		_this.element.find('.'+_this.options.header).unbind('click');
 	},
 
     // Use the _setOption method to respond to changes to options

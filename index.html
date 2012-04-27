@@ -5,8 +5,14 @@
 	<title>Vertical Dropdown Component</title>
 	
 	<link rel="stylesheet" href="css/normalize.css" type="text/css" />
-	<link rel="stylesheet" href="css/accordion.css" type="text/css" />
+	<link rel="stylesheet" href="css/accord.css" type="text/css" />
 	
+	<style type="text/css">
+		.accord {
+			margin: 20px 20px 30px;
+			width: 200px;
+		}
+	</style>
 	
 </head>
 <body style="padding:10px">
@@ -15,7 +21,7 @@
 	<h1>Accordion Plugin</h1>
 
 	<h2>Example 1</h2>
-	<p>Call accordingly on the container of elements, this will use the default settings</p>
+	<p>Call accord on the container of elements, this will use the default settings</p>
 	<code>
 		$('#accord1').accord();
 	</code>
@@ -37,12 +43,12 @@
 		$('#accord2').accord({ <br />
 		 		headers : '.header', // define accordian headers aka trigger to open<br />
 				content : '.content', // define accordion containers<br />
-				slideup : 'slow', // also takes an integer not in quotes<br />
+				slideup : 'normal', // also takes an integer not in quotes<br />
 				slidedown : 'slow', // also takes an integer not in quotes<br />
 				collapsible: true, // (boolean) Whether only one section can be active (true)<br />
 				activeClass: 'open', // (string) Class added to active headers, can also be used to apply open/close icon<br />
 				active: 1 // pass the index of the slide you want to start active, if left at 0 none will start active<br />
-	 		});
+	 	});
 	</code>
 	<!-- Start Accordingly HTML -->
 	<div id="accord2" class="accord">
@@ -61,16 +67,16 @@
 
 
 	
-	<script src="js/jquery-min.js" type="text/javascript"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
-	<script src="js/jquery-accord.js" type="text/javascript"></script>
+	<script type="text/javascript" src="js/jquery-min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/jquery-accord.js"></script>
 	<script type="text/javascript">
-		$(function() {
+		$(function(){
 	 		$('#accord1').accord();
 	 		$('#accord2').accord({
-		 		headers : '.header', // define accordian headers aka trigger to open
+		 		header : '.header', // define accordian headers aka trigger to open
 				content : '.content', // define accordion containers
-				slideup : 'slow', // also takes an integer not in quotes
+				slideup : 'normal', // also takes an integer not in quotes
 				slidedown : 'slow', // also takes an integer not in quotes
 				collapsible: true, // (boolean) Whether only one section can be active (true)
 				activeClass: 'open', // (string) Class added to active headers, can also be used to apply open/close icon
