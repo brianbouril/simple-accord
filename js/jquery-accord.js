@@ -14,8 +14,8 @@
  
     // These options will be used as defaults
     options: { 
-    	header : '.header', // define accordian header aka trigger to open
-		content : '.content', // define accordion containers
+    	headerClass : 'header', // define accordian header class aka trigger to open
+		contentClass : 'content', // define accordion containers class
 		slideup : 'fast', // also takes an integer not in quotes
 		slidedown : 'fast', // also takes an integer not in quotes
 		collapsible: false, // (boolean) Whether only one header and content can be active (true)
@@ -27,19 +27,19 @@
     _create: function() {
 		var _this = this,
 			el = _this.element,
-			header = el.find(_this.options.header),
-			content = el.find(_this.options.content);
+			header = el.find('.'+_this.options.headerClass),
+			content = el.find('.'+_this.options.contentClass);
 
 		if(_this.options.active != 0){
 			// add the active class to the header and open the slide
-			el.find(_this.options.header +':nth-child('+_this.options.active+')').addClass(_this.options.activeClass).next().show();
+			el.find('.'+_this.options.header +':nth-child('+_this.options.active+')').addClass(_this.options.activeClass).next().show();
 		}
 
 		header.bind('click', function() {				
 			// if collapsible is true close all
 			if(_this.options.collapsible === true){
 				//console.log($('.'+_this.options.header+'.'+_this.options.activeClass));
-				var $active = _this.element.find('.'+_this.options.header+'.'+_this.options.activeClass)
+				var $active = _this.element.find('.'+_this.options.headerClass+'.'+_this.options.activeClass)
 				// remove the active class from all headers 
 				$active.removeClass(_this.options.activeClass);
 				// close all open slides
