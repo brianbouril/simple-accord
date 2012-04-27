@@ -1,0 +1,1 @@
+A simple accordion plugin for jQuery
