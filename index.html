@@ -8,6 +8,9 @@
 	<link rel="stylesheet" href="css/accord.css" type="text/css" />
 	
 	<style type="text/css">
+		body { padding:50px 10px 50px; height: 700px; }
+		.code { background: #CCC; padding: 30px; color: #333; font-family: "Courier New", monospace, serif; font-size: 1em; }
+		.code .indent { text-indent: 20px; }
 		.accord {
 			margin: 20px 20px 30px;
 			width: 200px;
@@ -39,17 +42,17 @@
 
 	<h2>Example 2</h2>
 	<p>Change some of the settings</p>
-	<code>
-		$('#accord2').accord({ <br />
-		 		headers : '.header', // define accordian headers aka trigger to open<br />
-				content : '.content', // define accordion containers<br />
-				slideup : 'fast', // also takes an integer not in quotes<br />
-				slidedown : 'fast', // also takes an integer not in quotes<br />
-				collapsible: true, // (boolean) Whether only one section can be active (true)<br />
-				activeClass: 'open', // (string) Class added to active headers, can also be used to apply open/close icon<br />
-				active: 1 // pass the index of the slide you want to start active, if left at 0 none will start active<br />
-	 	});
-	</code>
+	<div class="code">
+		<div>$('#accord2').accord({</div>
+		<div class="indent">headersClass : 'header', // define accordian headers aka trigger to open</div>
+		<div class="indent">contentClass : 'content', // define accordion containers</div>
+		<div class="indent">slideup : 'slow', // also takes an integer not in quotes</div>
+		<div class="indent">slidedown : 'slow', // also takes an integer not in quotes</div>
+		<div class="indent">collapsible: true, // (boolean) Whether only one section can be active (true)</div>
+		<div class="indent">activeClass: 'open', // (string) Class added to active headers</div>
+		<div class="indent">active: 1 // pass the index of the slide you want to start active, if left at 0 none will start active</div>
+	 	<div>});</div>
+	</div>
 	<!-- Start Accordingly HTML -->
 	<div id="accord2" class="accord">
 		<div class="header">Header Here</div>
@@ -74,9 +77,9 @@
 		$(function(){
 	 		$('#accord1').accord();
 	 		$('#accord2').accord({
-		 		header : '.header', // define accordian headers aka trigger to open
-				content : '.content', // define accordion containers
-				slideup : 'normal', // also takes an integer not in quotes
+		 		headerClass : 'header', // define accordian headers aka trigger to open
+				contentClass : 'content', // define accordion containers
+				slideup : 'slow', // also takes an integer not in quotes
 				slidedown : 'slow', // also takes an integer not in quotes
 				collapsible: true, // (boolean) Whether only one section can be active (true)
 				activeClass: 'open', // (string) Class added to active headers, can also be used to apply open/close icon

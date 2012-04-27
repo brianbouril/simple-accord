@@ -19,7 +19,7 @@
 		slideup : 'fast', // also takes an integer not in quotes
 		slidedown : 'fast', // also takes an integer not in quotes
 		collapsible: false, // (boolean) Whether only one header and content can be active (true)
-		activeClass: 'open', // (string) Class added to active header, can also be used to apply open/close icon
+		activeClass: 'open', // (string) Class added to active header
 		active: 0 // pass the index of the slide you want to start active, if left at 0 none will start active
     },
  

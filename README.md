@@ -17,11 +17,11 @@ Call accord on the container of elements, using the same classes for the header 
 Then instantiate the widget, by default these are the set options:
 	
 	$('#accord').accord({
-		headers : '.header',  //define accordian headers aka trigger to open
-		content : '.content',  //define accordion containers
+		headersClass : 'header',  //define accordian headers aka trigger to open
+		contentClass : 'content',  //define accordion containers
 		slideup : 'fast',  //also takes an integer not in quotes
 		slidedown : 'fast',  //also takes an integer not in quotes
 		collapsible: true,  //(boolean) Whether only one header and content can be active (true)
-		activeClass: 'open',  //(string) Class added to active headers, can also be used to apply open/close icon
+		activeClass: 'open',  //(string) Class added to active headers
 		active: 1  //pass the index of the slide you want to start active, if left at 0 none will start active
 	});
