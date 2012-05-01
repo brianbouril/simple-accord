@@ -25,3 +25,7 @@ Then instantiate the widget, by default these are the set options:
 		activeClass: 'open',  //(string) Class added to active headers
 		active: 1  //pass the index of the slide you want to start active, if left at 0 none will start active
 	});
+	
+----------------------------------------------------------------------------------	
+	
+If you see any ways to make Tooltipsy better, or can think of options that would be handy just let me know.
